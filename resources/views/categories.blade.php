@@ -17,6 +17,9 @@
                         <p class="text-gray-700 text-base">
                             {{ $category->description|| 'No description' }}
                         </p>
+                        <a href="categories/{{ $category->id }}" class="text-blue-500 hover:text-blue-700">
+                            View products
+                        </a>
 
 
 

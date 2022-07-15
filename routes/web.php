@@ -24,3 +24,12 @@ Route::get('/categories', function () {
         'categories' => Category::getAll(),
     ]);
 });
+
+Route::get('/categories/{id}', function ($id) {
+    $products = Category::getProducts($id);
+    // dd($products);
+    return view('products', [
+        'heading' => 'All Categories',
+        'products' => $products,
+    ]);
+});
