@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use App\Models\Category;
+use App\Models\Product;
 use Database\Factories\CategoriesFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,7 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
+
+        //Product::factory(20)->create(); 
         Category::create([
                 'name' => 'electronics', 
                 'thumbnail' => 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1802&q=80'
