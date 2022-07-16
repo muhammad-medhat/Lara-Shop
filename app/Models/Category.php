@@ -22,4 +22,9 @@ class Category extends Model
             
         // return Category::find($id)->products;
     }
+    //get single category by id
+    public static function getCategory($id)
+    {
+        return Category::find($id);
+    }
 }

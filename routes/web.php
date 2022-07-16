@@ -19,17 +19,63 @@ Route::get('/', function () {
 });
 
 Route::get('/categories', function () {
-    return view('categories', [
-        'heading' => 'All Categories',
-        'categories' => Category::getAll(),
-    ]);
+    $cats = Category::getAll();
+    // dd($cats);
+    if($cats) {
+        return view('categories', ['categories' => $cats]);
+    } else {
+        abort(404);
+    }
+
 });
 
 Route::get('/categories/{id}', function ($id) {
     $products = Category::getProducts($id);
     // dd($products);
-    return view('products', [
-        'heading' => 'All Categories',
-        'products' => $products,
-    ]);
+    if($products){
+        return view('products', [
+            'heading' => 'All Categories',
+            'products' => $products,
+        ]);         
+    } else {
+        abort(404);
+    }
+
 });
+
+Route::get('/categories/{id}', function ($id) {
+    $products = Category::getProducts($id);
+    if($products){
+        return view('products', [
+            'products' => $products,
+        ]);         
+    } else {
+        abort(404);
+    }
+});
+
+
+
+
+
+Route::get('/category/{category}', function (Category $category) {
+    //dd($category);
+        return view('category', [
+            'heading' => "Show Category: {$category->name}",    
+            'category' => $category,
+        ]);         
+});
+
+
+            // Route::get('/category/{id}', function ($id) {
+            //     $category = Category::getCategory($id);
+            //     // dd($category);
+            //     if($category){
+            //         return view('category', [
+            //             'heading' => "Show Category: {$category->name}",    
+            //             'category' => $category,
+            //         ]);         
+            //     } else {
+            //         abort(404);
+            //     }
+            // });

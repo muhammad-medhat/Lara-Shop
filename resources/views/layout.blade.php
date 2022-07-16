@@ -26,8 +26,10 @@
     </script>
 </head>
 <body>
-
-    @yield('content')
+  @include('partials._search')
+    <div class="container mx-auto">
+        @yield('content')
+    </div>  
     
 </body>
 </html>
