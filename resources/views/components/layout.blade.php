@@ -28,7 +28,8 @@
 <body>
   @include('partials._search')
     <div class="container mx-auto">
-        @yield('content')
+        {{-- @yield('content') --}}
+        {{$slot}}
     </div>  
     
 </body>
