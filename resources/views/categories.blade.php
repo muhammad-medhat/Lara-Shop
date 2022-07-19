@@ -1,4 +1,6 @@
-<x-layout>
+@extends('layout')
+
+@section('content')
 
     <h1>Categories</h1>
 
@@ -19,8 +21,9 @@
     </div>
 
 
-</x-layout>
 
 
 
 
+
+@endsection
