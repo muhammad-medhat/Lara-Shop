@@ -26,6 +26,16 @@ class CategoryController extends Controller
 
     public static function create(){
         // dd('create');
-        return view('categories.create');
+        if(request()->isMethod('post')){
+            $data = request()->all();
+            // dd($data);
+            $cat = new Category();
+            $cat->name = $data['name'];
+            $cat->thumbnail='';
+            $cat->save();
+            return redirect('/categories');
+        } else {
+            return view('categories.create');
+        }
     }
 }
