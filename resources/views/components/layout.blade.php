@@ -26,9 +26,31 @@
     </script>
 </head>
 <body>
+
+  <div class="navbar">
+
+        <div class="flex items-center">
+          <a href="/categories" class="text-2xl font-bold">
+            Lara-Com
+          </a>
+        </div>
+        <div class="flex items-center">
+          <a href="/categories/create" class="text-2xl font-bold">
+            Create
+          </a>
+        </div>
+        <div class="flex items-center">
+          <a href="/login" class="text-2xl font-bold">
+            Login
+          </a>
+        </div>
+
+  </div>
+
   @include('partials._search')
     <div class="container mx-auto">
-        @yield('content')
+        {{-- @yield('content') --}}
+        {{$slot}}
     </div>  
     
 </body>

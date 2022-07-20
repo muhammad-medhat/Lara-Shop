@@ -11,17 +11,21 @@ class CategoryController extends Controller
     public static function index(){
         $cats = Category::getAll();
         if($cats) {
-            return view('categories', ['categories' => $cats]);
+            return view('categories.index', ['categories' => $cats]);
         } else {
             abort(404);
         }
     }
 
     public static function show(Category $category){
-        return view('category', [
-            'heading' => "Show Category: {$category->name}",    
+        // dd($category);
+        return view('categories.show', [
             'category' => $category,
         ]);  
+    }
 
+    public static function create(){
+        // dd('create');
+        return view('categories.create');
     }
 }
