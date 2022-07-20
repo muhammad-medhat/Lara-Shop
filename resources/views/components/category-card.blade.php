@@ -1,7 +1,7 @@
 
 
     <div >
-        <a href="category/{{ $category->id }}">
+        <a href="categories/show/{{ $category->id }}">
             <h2>
                 {{ $category->name }}
             </h2>
