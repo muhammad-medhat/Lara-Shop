@@ -29,6 +29,10 @@ tailwind.config = {
 
   @include('partials._nav')
   @include('partials._search')
+  <div class="border">
+      <x-flash-message></x-flash-message>
+
+  </div>
     <div class="container mx-auto">
         {{-- @yield('content') --}}
         {{$slot}}

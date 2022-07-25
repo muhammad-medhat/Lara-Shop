@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Contracts\Session\Session;
 
 class CategoryController extends Controller
 {
@@ -33,7 +34,8 @@ class CategoryController extends Controller
             $cat->name = $data['name'];
             $cat->thumbnail='';
             $cat->save();
-            return redirect('/categories');
+            // Session::flash('success', 'Category created successfully');
+            return redirect('/categories')->with('message', 'Category created successfully');
         } else {
             return view('categories.create');
         }
