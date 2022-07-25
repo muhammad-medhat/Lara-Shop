@@ -17,7 +17,9 @@
         @endif
 
     </div>
-
+<div class="mt-6 p2">
+    {{ $categories->links() }}
+</div>
 
 </x-layout>
 

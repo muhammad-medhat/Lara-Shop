@@ -11,7 +11,9 @@ class Category extends Model
 
     public static function getAll()
     {
-        return Category::all();
+        // dd(Category::all());
+        // dd(Category::latest()->paginate());
+        return Category::latest()->paginate();
     }  
     //get products by category id
     public static function getProducts($id)
