@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Contracts\Session\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,9 @@ Route::get('/', function () {
 
 Route::get('categories', [CategoryController::class, 'index']);
 Route::get('categories/show/{category}', [CategoryController::class, 'show']);
+
 Route::get('categories/create', [CategoryController::class, 'create']);
+Route::post('categories/create', [CategoryController::class, 'create']);
 
 
 
